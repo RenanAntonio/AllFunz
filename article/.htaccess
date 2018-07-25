@@ -1,0 +1,5 @@
+Options +MultiViews
+
+RewriteEngine on
+
+RewriteRule ^([^/]*)\/?(.*).html$ ?article=$2&article-id=$1

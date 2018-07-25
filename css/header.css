@@ -1,0 +1,359 @@
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #696969;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #696969;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #696969;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #696969;
+}
+
+body {
+	background: #edeef0;
+	padding: 0;
+	margin: 0;
+	font-size: 13px;
+}
+
+ul li {
+	list-style: none;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+    display: initial;
+}
+
+a {
+	text-decoration: none;
+	color: #666;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background: #333;
+    text-align: center;
+    color: #FFF;
+    border-bottom: 3px solid #CCC;
+    box-shadow: 0 -3px 9px #000;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+}
+
+.wrap_header {
+    width: 960px;
+    margin: 0 auto;
+    font-size: 12.5px;
+    padding: 0 15px;
+    display: block;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+    font-size: 12.5px;
+    padding: 0 15px;
+    display: block;
+    margin-top: 80px;
+    min-height: 600px;
+    height: auto;
+    overflow: hidden;
+}
+
+header > div {
+    display: inline;
+}
+
+div {
+	position: relative;
+}
+
+#logo {
+    font-size: 38px;
+    font-family: Harabara;
+    font-weight: normal;
+    color: #666;
+    float: left;
+    margin-top: 5px;
+    background: url(../img/logo_2.png) no-repeat;
+    background-size: 40px;
+    width: 45px;
+    height: 45px;
+    text-indent: -999px;
+}
+
+.search_bar {
+    background: url(../img/search.png) no-repeat 12px 6px;
+    width: 10px;
+    position: relative;
+    height: 30px;
+    color: #FFF;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 8px 20px 8px 45px;
+    border: 0;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: OpenSans;
+    font-size: 16px;
+    float: left;
+    border-left: 1px solid #666;
+    -webkit-transition: .7s ease;
+    background-size: 20px;
+    cursor: pointer;
+}
+
+.search_bar:focus {
+    outline: none;
+    width: 500px;
+    cursor: initial;
+}
+
+.head_login {
+    float: right;
+    margin-top: 5px;
+    position: relative;
+    font-family: OpenSans;
+    font-size: 15px;
+    color: #FFF;
+}
+
+.head_login a {
+    color: #FFF;
+}
+
+.notLogged {
+    background: url(../img/user.png) no-repeat center;
+    background-size: 30px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-top: -2px;
+}
+
+@keyframes bouncing {
+	0% { transform: translateY(0); }
+	50% { transform: translateY(5%); }
+	100% { transform: translateY(0); }
+}
+
+.head_login img {
+    width: 40px;
+    border-radius: 30px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.head_login img:hover, .notLogged:hover {
+	animation: bouncing 0.5s infinite;
+	animation-timing-function: ease;
+}
+
+.head_login span {
+    font-family: _century;
+    text-align: right;
+    float: left;
+    margin-right: 10px;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.head_login strong {
+    clear: both;
+    display: block;
+    font-size: 14px;
+}
+
+.user_area {
+	display: none;
+    position: absolute;
+    width: 100%;
+    background: #CCC;
+    height: 170px;
+    border-radius: 5px;
+    margin-top: 25px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#amzn_assoc_ad_div_adunit0_0 {
+    float: left !important;
+}
+
+div#amzn-native-ad-0 {
+    max-height: 230px !important;
+    overflow: hidden !important;
+}
+
+
+/*  Login Page  */
+
+.signin-form {
+    margin: 0 auto;
+    width: 700px;
+    min-height: 300px;
+    background: #FFF;
+    position: relative;
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+    -webkit-box-shadow: 10px 10px 19px 0px rgba(204,204,204,1);
+    -moz-box-shadow: 10px 10px 19px 0px rgba(204,204,204,1);
+    box-shadow: 10px 10px 19px 0px rgba(204,204,204,1);
+}
+
+.login h1 {
+    background: url(../img/lock_icon.png) 30px 15px no-repeat #40648B;
+    background-size: 40px;
+    height: 70px;
+    box-sizing: border-box;
+    color: #FFF;
+    padding-top: 17px;
+    padding-left: 90px;
+    font-family: OpenSans;
+    font-weight: normal;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    
+}
+
+.btFacebook {
+    background: url(../img/fb_button.png) no-repeat;
+    background-size: 350px;
+    width: 350px;
+    height: 52px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 60px;
+    box-sizing: border-box;
+    color: #FFF;
+    font-family: OpenSans;
+    font-size: 18px;
+    padding-left: 100px;
+    padding-top: 12px;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.g-signin2 {
+    background: #FFF;
+    margin: 0 auto;
+    margin-top: 30px;
+    box-sizing: border-box;
+    width: 120px;
+}
+
+.btFacebook:hover, .g-signin2:hover {
+    opacity: 0.8;
+}
+
+#bottom {
+    background: #333;
+    width: 100%;
+    position: relative;
+    height: 70px;
+    border-top: 2px solid #CCC;
+    box-shadow: 0 4px 15px #000;
+}
+
+#bottom .head_login {
+    display: none;
+}
+/* Mobile */
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        min-height: initial;
+        height: auto;
+        padding: 0;
+        margin-top: 70px;
+    }
+    
+    #bottom {
+        width: 100%;
+        height: 60px;
+        background: #333;
+        position: fixed;
+        bottom: 0;
+        z-index: 2;
+        display: block;
+    }
+
+    #bottom .head_login {
+        display: block;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    header .head_login {
+        display: none;
+    }
+
+    .head_login span {
+        display: none;
+    }
+
+    #logo {
+        margin-top: 8px;
+        background: url(../img/logo_2.png) no-repeat;
+        background-size: 35px;
+        width: 48px;
+        height: 40px;
+    }
+
+    .search_bar {
+        float: left;
+        font-size: 14px;
+        margin-left: 0;
+    }
+
+    .search_bar:focus {
+        width: 85%;
+        font-size: 16px;
+    }
+
+    .user_area {
+        width: 100px;
+        background: #CCC;
+        height: 130px;
+        margin-top: -195px;
+        padding: 20px;
+        right: 0;
+    }
+
+    .wrap_header {
+        width: 100%;
+    }
+
+    .head_login img:hover, .notLogged:hover {
+        animation: initial;
+        animation-timing-function: initial;
+    }
+
+    .wrap .article {
+        width: 230px;
+        font-size: 16px;
+    }
+
+    .signin-form {
+        width: 90%;
+        margin: 20px;
+        box-sizing: border-box;
+    }
+
+    .btFacebook {
+        width: 90%;
+        font-size: 17px;
+        padding: 0;
+        padding-top: 14px;
+        padding-left: 65px;
+    }
+
+}

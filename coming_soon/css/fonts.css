@@ -1,0 +1,42 @@
+@font-face {
+     font-family: Segoe;
+     src: url(../fonts/segoeui.ttf);
+}
+
+@font-face {
+     font-family: _century;
+     src: url(../fonts/Century-Gothic.ttf);
+}
+
+@font-face {
+     font-family: Harabara;
+     src: url(../fonts/Harabara_Mais_Demo.otf);
+}
+
+@font-face {
+     font-family: Sintony;
+     src: url(../fonts/Sintony-Regular.ttf);
+}
+
+@font-face {
+     font-family: Sintony Bold;
+     src: url(../fonts/Sintony-Bold.ttf);
+}
+
+@font-face {
+     font-family: OpenSans;
+     src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+     font-family: OpenSans Light;
+     src: url(../fonts/OpenSans-Light.ttf);
+}
+@font-face {
+     font-family: OpenSans Italic;
+     src: url(../fonts/OpenSans-Italic.ttf);
+}
+@font-face {
+     font-family: OpenSans Bold;
+     src: url(../fonts/OpenSans-Bold.ttf);
+}

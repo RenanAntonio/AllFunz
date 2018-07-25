@@ -1,0 +1,185 @@
+<html>
+	<head>
+		<title>Magic for AllFunz</title>
+		<!-- CSS -->
+		<style>
+			body {
+			    background: #333;
+			    color: #CCC;
+			    text-align: center;
+			    font-family: Arial;
+			}
+			#logo {
+			    border: none;
+			    background: url(img/logo_white.png) no-repeat;
+			    width: 340px;
+			    height: 100px;
+			    position: relative;
+			    background-size: 300px;
+			    margin: 0 auto;
+			    margin-top: 40px;
+			}
+			h2 {
+			    margin: 20px;
+			}
+			textarea#description {
+			    width: 50%;
+			    border: 1px solid #CCC;
+			    border-radius: 7px;
+			}
+			div#result {
+			    text-align: center;
+			    font-size: 22px;
+			    box-sizing: border-box;
+			    float: left;
+			    word-wrap: break-word;
+			    width: 100%;
+			    line-height: 40px;
+			}
+		</style>
+		<!-- JS -->
+		<script src="js/jquery.js"></script>
+		<script>
+			/* Tags to skip on search Titles */ var notUsableTitles = ["surname", "redirects", "disambiguation", "may refer to:", "(genre)", "list of", "lists of", "(viral", "filmography", "discography", "videography", "legal disputes", "religious debates", "controversy over", "fandom", "-related", "'s health", "'s appearance", "award", "awards", "(franchise)", "(film series)"]; /* Tags to skip on search Descriptions */ var notUsableDescriptions = ["redirects", "disambiguation", "may refer to:", "bible"];
+
+			/* Tags by category */
+			var music = [
+
+				/*======================================================================= 
+					Movies 
+				=========================================================================*/
+
+					/* Movies */
+					[/(.*)(?:is|was|were|are)(.*)(.*)(?:film(.*)directed|film(.*)produced|superhero film|film(.*)originally|film(.*)and|film(.*)created|documentary–concert film|film(.*)released|film(.*)about|film(.*)with)/, 'movies/television', 'movie_page'],
+					[/(.*)(?:is|was|were|are)(.*)(.*)(?:sitcom(.*)created|web television|television(.*)series|television(.*)drama|television sitcom|series(.*)created|sitcom(.*)created|aired on|mockumentary|documentary)/, 'movies/television', 'series_page'],
+
+					/* People */
+					[/(.*)(?:is|was|were|are)(.*)(.*)(?:actor|actress|director|producer|writer|character|protagonist(.*)film)/, 'movies/television', 'artist_page'],
+
+
+				/*======================================================================= 
+						Sports 
+					=========================================================================*/
+
+					/* Player */
+					[/(.*)(?:is|was|were|are)(.*)footballer/, 'sports', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)player/, 'sports', 'artist_page'],
+
+					/* Team */
+					[/(.*)(?:is|was|were|are)(.*)(?:team|club) /, 'sports', 'artist_page'],
+
+					/* Tournament */
+					[/(.*)(?:is|was|were|are)(.*)footballer /, 'sports', 'artist_page'],
+
+
+
+					
+				/*======================================================================= 
+					Music 
+				=========================================================================*/
+
+					/* Artist/Bands/Groups */
+
+					[/(.*)(?:is|was|were|are)(.*)rock band /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)pop band /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)pop\/rock band /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)boy band /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)metal band /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)jazz band /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)britpop\/powerpop /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)music group /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)vocal group /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)hip hop group /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)music duo /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)reggae band /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)pop (.*) group /, 'music', 'artist_page'],
+
+					[/(.*)(?:is|was|were|are)(.*)singer /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)music producer /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)dj /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)dancer /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)musician /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)choreographer /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)recording artist /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)arranger /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)music composer /, 'music', 'artist_page'],
+					[/(.*)(?:is|was|were|are)(.*)rapper /, 'music', 'artist_page'],
+
+					/* Album */
+					[/(.*)(?:is|was|were|are)(.*)studio album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)live album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)posthumous album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)posthumous album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)a remix album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)debut album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)greatest hits album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)compilation (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)compilation album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)compilation albums (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)box set (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)first album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)second album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)third album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)last album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)final album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)visual album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+					[/(.*)(?:is|was|were|are)(.*)video album (.*)(?:by|released|of|from)/, 'music', 'album_page'],
+
+					/* Song */
+					[/(.*)(?:is|was|were|are)(.*)song (.*)(?:by|released|of|from|performed)/, 'music', 'song_page'],
+					[/(.*)(?:is|was|were|are)(.*)song written by /, 'music', 'song_page'],
+					[/(.*)(?:is|was|were|are)(.*)song recorded by /, 'music', 'song_page'],
+					[/(.*)(?:is|was|were|are)(.*)song composed by /, 'music', 'song_page'],
+					[/(.*)(?:is|was|were|are)(.*)single (.*)(?:by|released|of|from|performed)/, 'music', 'song_page'],
+
+					/* Concerts/Tours */
+					[/(.*)(?:is|was|were|are)(.*)concert tour (.*)(?:by|released|of)/, 'music', 'concert_page'],
+					[/(.*)(?:is|was|were|are)(.*)tour (.*)(?:by|released|of)/, 'music', 'concert_page'],
+					[/(.*)(?:is|was|were|are)(.*)concert (.*)(?:by|released|of)/, 'music', 'concert_page']
+
+			];
+
+
+			//Defining variables
+			var music_clean_result = [];
+
+			//Defining Magic App
+			var Magic = {
+
+				//Controller function
+				FilterTags: function() {
+					Magic.FilterMusic($('#description').val());
+				},
+
+				//Music Filtering
+				FilterMusic: function(lineInfos) {
+					//Music
+					var music_category = 0, page_type = '', category = '', match = '';
+					for (var mus = 0; mus < music.length; mus++) {
+						if (lineInfos.substr(0,190).match(music[mus][0]) != undefined) {
+							music_category += 1;
+							match = music[mus][0];
+							category = music[mus][1];
+							page_type = music[mus][2];
+						}
+					}
+					if (music_category > 0) {
+						music_clean_result.push([lineInfos, category, page_type, match]);
+					}
+					$('#result').html('<strong>Category:</strong> ' + category + '<br><strong>Type of page:</strong> ' + page_type + '<br><strong>Match:</strong> ' + match);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="logo"></div>
+		<h2>Type your description and let's see in which rule it applies:</h2>
+		<textarea id="description" name="Text1" cols="40" rows="10"></textarea>
+		<div id="result"></div>
+		<script>
+			$('#description').on('keyup', function(){
+				Magic.FilterTags();
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,811 @@
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #696969;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #696969;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #696969;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #696969;
+}
+
+body {
+    background: #edeef0;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+}
+
+ul li {
+    list-style: none;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+    display: initial;
+}
+
+a {
+    text-decoration: none;
+    color: #666666;
+}
+
+.a {
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
+}
+
+.backToTop {
+    background: url(../img/backtotop.png) no-repeat;
+    background-size: 50px;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 99999;
+}
+
+.mainBannerHome {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    -webkit-transition: background 0.9s linear;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: background 0.9s linear;
+}
+
+.mainBannerHome.first {
+    background: url(../img/bg_main.jpg) #000 no-repeat center;
+    background-size: 100% 100%;
+}
+
+.mainBannerHome.second {
+    background: url(../img/bg_music.png) #000 no-repeat center;
+    background-size: 100% 100%;
+}
+
+.mainBannerHome.third {
+    background: url(../img/bg_main3.jpg) #000 no-repeat center;
+    background-size: 100% 100%;
+}
+
+.mainBannerHome.fourth {
+    background: url(../img/bg_main2.jpg) #000 no-repeat center;
+    background-size: 100% 100%;
+}
+
+.mainBannerHome .layer {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+}
+
+.menuBar {
+    width: auto;
+    height: 50px;
+    position: relative;
+    float: right;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+    color: #FFF;
+    font-size: 18px;
+    font-family: Sintony;
+    margin-top: 20px;
+    margin-right: 140px;
+}
+
+ul.menuBar li {
+    float: left;
+    padding-left: 50px;
+    cursor: pointer;
+}
+
+ul.menuBar li:not(.login):hover {
+    color: #F4D03F;
+}
+
+.menuBar .notLogged {
+    background: url(../img/user.png) no-repeat 0px 5px;
+    background-size: 30px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin-top: -10px;
+    float: left;
+    padding-left: 40px;
+    padding-top: 10px;
+}
+
+.menuBar .notLogged:hover {
+    background: url(../img/user_gold.png) no-repeat 0px 5px;
+    background-size: 30px;
+    color: #F4D03F;
+}
+
+.logoHome {
+    background: url(../img/logo_white.png) no-repeat -13px 0px;
+    position: relative;
+    width: 35%;
+    height: 26%;
+    float: left;
+    margin-left: 8%;
+    margin-top: 170px;
+    background-size: contain;
+}
+
+h1.message {
+    float: left;
+    position: relative;
+    clear: both;
+    color: #F4D03F;
+    font-family: Sintony;
+    font-size: 2vw;
+    font-weight: normal;
+    margin: 0;
+    margin-left: 8%;
+}
+
+.join {
+    float: left;
+    position: relative;
+    clear: both;
+    color: #FFF;
+    font-family: OpenSans;
+    font-size: 28px;
+    margin: 0;
+    margin-left: 8%;
+    margin-top: 70px;
+    border: 1px solid #FFF;
+    box-sizing: border-box;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: background-color 700ms linear;
+    -ms-transition: background-color 700ms linear;
+    transition: background-color 700ms linear;
+}
+
+.join:hover {
+    background: #FFF;
+    color: #333;
+    -webkit-transition: background-color 700ms linear;
+    -ms-transition: background-color 700ms linear;
+    transition: background-color 700ms linear;
+}
+
+
+#articlesHome {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background: url(../img/bg_home_movies.png) #FFF no-repeat center;
+    background-size: 100% 650px;
+    -webkit-transition: background 1.3s linear;
+    -moz-transition: all 1.3s ease-in-out;
+    -ms-transition: all 1.3s ease-in-out;
+    -o-transition: all 1.3s ease-in-out;
+    transition: background 1.3s linear;
+}
+
+.articles {
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 80px;
+    border-top: 5px solid #F4D03F;
+    display: none;
+}
+
+.articles.active {
+    display: block;
+}
+
+.articles .avatar {
+    width: 150px;
+    height: 150px;
+    border: 5px solid;
+    border-radius: 80px;
+    margin: 0 auto;
+}
+
+.articles h2 {
+    font-size: 32px;
+    font-family: Harabara;
+    letter-spacing: 0px;
+}
+
+.articles p {
+    font-family: OpenSans;
+    color: #666666;
+    font-size: 20px;
+    margin: 0 auto;
+    width: 600px;
+}
+
+
+.homePagination {
+    width: 100%;
+    height: 30px;
+    padding: 0;
+    margin-top: 120px;
+    text-align: center;
+}
+
+.spheres {
+    width: 200px;
+    height: 30px;
+    padding: 0;
+    margin-top: 70px;
+}
+
+ul.homePagination li, .spheres li {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background: #000;
+    display: inline-block;
+    border-radius: 20px;
+    cursor: pointer;
+     border: 2px solid transparent;
+}
+
+ul.homePagination li.active {
+    animation: bouncing 0.5s infinite;
+    animation-timing-function: ease;
+}
+
+.spheres li {
+    cursor: initial;
+}
+
+ul.homePagination li:hover, ul.homePagination li.active {
+    border-color: #333;
+}
+
+
+
+/*  Colors  */
+
+.articles.movies {
+    border-color: #E64C3B;
+}
+
+.articles.movies .avatar {
+    background: url(../img/avatar_wolf.jpg) center no-repeat;
+    background-size: 100%;
+    border-color: #E64C3B;
+}
+
+.articles.movies h2 {
+    color: #E64C3B;
+}
+
+ul.homePagination li.mov, .spheres li.mov {
+    background-color: #E64C3B;
+}
+
+
+
+
+
+.articles.music {
+    border-color: #287FB8;
+}
+
+.articles.music .avatar {
+    background: url(../img/avatar_michael.jpg) center no-repeat;
+    background-size: 100%;
+    border-color: #287FB8;
+}
+
+.articles.music h2 {
+    color: #287FB8;
+}
+
+ul.homePagination li.mus, .spheres li.mus {
+    background-color: #287FB8;
+}
+
+
+
+
+
+.articles.sports {
+    border-color: #2ECC71;
+}
+
+.articles.sports .avatar {
+    background: url(../img/avatar_messi.jpg) center no-repeat;
+    background-size: 100%;
+    border-color: #2ECC71;
+}
+
+.articles.sports h2 {
+    color: #2ECC71;
+}
+
+ul.homePagination li.spo, .spheres li.spo {
+    background-color: #2ECC71;
+}
+
+
+
+
+
+
+.articles.games {
+    border-color: #F4D03F;
+}
+
+.articles.games .avatar {
+    background: url(../img/avatar_mortal.jpg) center no-repeat;
+    background-size: 100%;
+    border-color: #F4D03F;
+}
+
+.articles.games h2 {
+    color: #F4D03F;
+}
+
+ul.homePagination li.gam, .spheres li.gam {
+    background-color: #F4D03F;
+}
+
+
+
+
+
+
+.articles.literature {
+    border-color: #9B59B6;
+}
+
+.articles.literature .avatar {
+    background: url(../img/avatar_harry.jpeg) center no-repeat;
+    background-size: 100%;
+    border-color: #9B59B6;
+}
+
+.articles.literature h2 {
+    color: #9B59B6;
+}
+
+ul.homePagination li.lit, .spheres li.lit {
+    background-color: #9B59B6;
+}
+
+
+
+
+
+.articles.others {
+    border-color: #666;
+}
+
+.articles.others .avatar {
+    background: url(../img/avatar_world.jpg) center no-repeat;
+    background-size: 100%;
+    border-color: #666;
+}
+
+.articles.others h2 {
+    color: #666;
+}
+
+ul.homePagination li.oth, .spheres li.oth {
+    background-color: #666;
+}
+
+
+
+/*  About  */
+
+#aboutUs {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../img/about.png) no-repeat right 0px #FFF;
+    border-top: 5px solid #333;
+    padding: 0px 70px 0px 110px;
+    box-sizing: border-box;
+}
+
+#aboutUs h2 {
+    font-size: 32px;
+    font-family: Sintony;
+    color: #555;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+#aboutUs p {
+    font-family: OpenSans;
+    color: #666666;
+    font-size: 20px;
+    width: 600px;
+}
+
+
+/*  Contact  */
+
+#contact {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../img/logo_white.png) no-repeat 900px center #333;
+    border-top: 5px solid #FFF;
+    padding: 0px 0px 0px 110px;
+    box-sizing: border-box;
+    background-size: 300px;
+}
+
+#contact h2 {
+    font-size: 32px;
+    font-family: Sintony;
+    color: #FFF;
+    margin-top: 60px;
+    margin-bottom: 80px;
+    font-weight: normal;
+}
+
+#contact a {
+    float: left;
+    display: block;
+    clear: both;
+    margin-bottom: 30px;
+}
+
+#contact a:hover .contact_icon {
+    color: #F4D03F;
+}
+
+.contact_icon {
+    font-family: OpenSans;
+    color: #666666;
+    font-size: 20px;
+    color: #FFF;
+    float: left;
+    cursor: pointer;
+}
+
+.contact_icon:before {
+    content: ' ';
+    width: 85px;
+    height: 85px;
+    position: relative;
+    display: inline-block;
+    border: 2px solid #FFF;
+    border-radius: 100px;
+    margin: 0;
+    box-sizing: border-box;
+    float: left;
+}
+
+#contact a:hover .contact_icon:before {
+    border-color: #F4D03F;
+}
+
+.contact_icon span {
+    float: left;
+    margin-top: 27px;
+    margin-left: 30px;
+}
+
+.contact_icon.mail:before {
+    background: url(../img/social_icons_white.png) no-repeat -144px -223px;
+}
+
+#contact a:hover .contact_icon.mail:before {
+    background: url(../img/social_icons_gold.png) no-repeat -144px -223px;
+}
+
+.contact_icon.face:before {
+    background: url(../img/social_icons_white.png) no-repeat -27px -13px;
+}
+
+#contact a:hover .contact_icon.face:before {
+    background: url(../img/social_icons_gold.png) no-repeat -27px -13px;
+}
+
+.contact_icon.insta:before {
+    background: url(../img/social_icons_white.png) no-repeat -27px -117px;
+}
+
+#contact a:hover .contact_icon.insta:before {
+    background: url(../img/social_icons_gold.png) no-repeat -27px -117px;
+}
+
+
+/*  Bottom  */
+
+#bottom {
+    width: 100%;
+    height: 10px;
+    font-family: OpenSans;
+    font-size: 18px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+    background: #333;
+    color: #EEE;
+}
+
+
+
+
+
+form.subscribe {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #111;
+    width: 450px;
+    height: 300px;
+    z-index: 9;
+    margin-left: -225px;
+    margin-top: -150px;
+    border: 1px solid #CCC;
+}
+
+form.subscribe input {
+    width: 280px;
+    display: block;
+    height: 40px;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-sizing: border-box;
+    padding: 12px;
+}
+
+form.subscribe input.error {
+    border: 2px solid #f55555;
+}
+
+form.subscribe input.error::placeholder {
+    color: #f55555;
+}
+
+.join.lightbox {
+    margin: 0 auto;
+    float: initial;
+    width: 180px;
+    margin-top: 35px;
+    text-align: center;
+}
+
+.closeLightbox {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    color: #FFF;
+    font-size: 25px;
+    font-family: OpenSans;
+    cursor: pointer;
+}
+
+.subscribe h2 {
+    font-family: OpenSans;
+    color: #FFF;
+    font-weight: normal;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.overlay {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.91;
+    z-index: 8;
+}
+
+
+
+
+
+/* Mobile */
+
+@media only screen and (max-width: 768px) {
+    .a, .b, .c, .d, .e, .f {
+        display: none;
+    }
+
+
+    .mainBannerHome {
+        background: none !important;
+        background-color: #333 !important;
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .mobMenu:before {
+        content: ' ';
+        background: url(../img/menu_icon.png) no-repeat;
+        width: 40px;
+        height: 40px;
+        background-size: 40px 40px;
+        float: right;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    
+    .menuBar {
+        display: none;
+        width: 100%;
+        height: auto;
+        float: initial;
+        padding: 0px;
+        margin: 0 auto;
+        text-align: center;
+        background: #FFF;
+        position: absolute;
+        top: 60px;
+        z-index: 9;
+        color: #333;
+    }
+
+    ul.menuBar li {
+        float: initial;
+        padding: 0;
+        cursor: pointer;
+        display: block;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        border-bottom: 1px solid #333;
+    }
+
+    .menuBar .notLogged {
+        float: initial;
+        padding: 0;
+        margin: 0;
+        background: none;
+        width: auto;
+        height: auto;
+    }
+
+    .menuBar .notLogged:hover {
+        background: none;
+    }
+
+    .logoHome {
+        background-position: 0px 0px;
+        width: 60%;
+        height: 20%;
+        float: initial;
+        margin: 0 auto;
+        margin-top: 100px;
+    }
+
+    .join {
+        margin: 0px 30px 0px 30px;
+        clear: initial;
+        float: initial;
+        font-size: 20px;
+    }
+
+    h1.message {
+        float: initial;
+        font-size: 20px;
+        margin: 200px 20px 20px 20px;
+    }
+
+    form.subscribe {
+        width: 100%;
+        margin-left: initial;
+        left: 0px;
+    }
+
+    .mainBannerHome .layer {
+        display: none;
+    }
+
+
+
+
+
+
+    #aboutUs {
+        background: none;
+        height: auto;
+        padding: 0px 20px 0px 20px;
+    }
+
+    #aboutUs h2 {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-size: 28px;
+    }
+
+    #aboutUs p {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .spheres {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+
+
+    .homePagination {
+        position: absolute;
+        bottom: 50px;
+    }
+
+    #articlesHome {
+        background-size: 100% 100%;
+    }
+
+    .articles {
+        padding: 30px 20px 0px 20px;
+    }
+
+    .articles p {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .articles .avatar {
+        width: 130px;
+        height: 130px;
+    }
+
+
+    #contact {
+        padding: 0px 20px 0px 20px;
+        text-align: center;
+    }
+
+    #contact h2 {
+        margin-bottom: 60px;
+    }
+
+    #contact span {
+        display: none;
+    }
+
+    #contact a {
+        float: initial;
+    }
+
+    #contact .contact_icon {
+        float: initial;
+    }
+
+    #contact .contact_icon:before {
+        float: initial;
+    }
+
+
+    #bottom {
+        display: none;
+    }
+}

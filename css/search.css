@@ -1,0 +1,97 @@
+.search_temporary {
+	display: none;
+	float: left; 
+	clear: both; 
+	margin-bottom: 20px;
+} 
+
+.search_results {
+	float: left;
+    clear: both;
+    margin-left: 80px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.search_results:hover {
+    background: #DDD;
+}
+
+.search_results.first {
+	margin-top: 20px;
+}
+
+.search_results img {
+    width: 100px;
+    float: left;
+}
+
+.search_results .name {
+    font-family: Sintony;
+    color: #333;
+    margin-top: 15px;
+}
+
+.search_results .name:hover {
+	text-decoration: underline;
+}
+
+.search_results a.url {
+    float: left;
+    font-size: 18px;
+}
+
+.search_results .avatar {
+    width: 80px;
+    height: 80px;
+    float: left;
+    border: 2px solid;
+    margin-right: 10px;
+    border-radius: 7px;
+}
+
+.search_results .desc {
+	display: block; /* or inline-block */
+	text-overflow: ellipsis;
+ 	word-wrap: break-word;
+ 	overflow: hidden;
+ 	max-height: 3.6em;
+ 	line-height: 1.8em;
+ 	float: left;
+ 	width: 900px;
+ 	clear: both;
+ 	white-space: nowrap;
+ 	color: #666;
+}
+
+div[type="movies"] .avatar {
+	border-color: var(--movies-category);
+	background: no-repeat center var(--movies-category);
+	background-size: 60px;
+	background-image: url(/allfunz/img/movies.png);
+}
+
+div[type="music"] .avatar {
+	border-color: var(--music-category);
+	background: no-repeat center var(--music-category);
+	background-size: 60px;
+	background-image: url(/allfunz/img/music.png);
+}
+div[type="games"] .avatar {
+	border-color: var(--games-category);
+	background: no-repeat center var(--games-category);
+	background-size: 60px;
+	background-image: url(/allfunz/img/games.png);
+}
+div[type="sports"] .avatar {
+	border-color: var(--sports-category);
+	background: no-repeat center var(--sports-category);
+	background-size: 60px;
+	background-image: url(/allfunz/img/sports.png);
+}
+div[type="literature"] .avatar {
+	border-color: var(--literature-category);
+	background: no-repeat center var(--literature-category);
+	background-size: 60px;
+	background-image: url(/allfunz/img/literature.png);
+}

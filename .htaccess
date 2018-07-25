@@ -1,0 +1,14 @@
+Options +MultiViews
+
+RewriteEngine on
+
+RewriteRule ^([\w\s,(),_:&!%'|+?@#$*-]+)\/forum$ forum.php?forum=$1
+
+
+RewriteRule ^([\w\s,(),_:&!%'|+?@#$*-]+)\/addtopic$ addtopic.php?forum=$1
+
+#RewriteRule ^search\/([\w\s,(),_:&!%'|+?@#$*-]+)$ search.php?query=$1
+
+RewriteRule ^([\w\s,(),_:&!%'|+?@#$*-]+)\/profile$ profile.php
+
+
